@@ -12,7 +12,9 @@ export interface FilterCondition {
     type: 'condition';
     columnKey: string | number;
     operator: OperatorType;
-    value: any;
+    /** Omitted for value-less operators (isNull, isNotNull, empty, notEmpty, isTrue, isFalse).
+     *  between/notBetween → [min, max]; in/notIn → array; matches → pattern string or RegExp. */
+    value?: any;
 }
 
 export interface FilterGroup {

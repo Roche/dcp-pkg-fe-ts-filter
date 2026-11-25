@@ -1,21 +1,32 @@
 {
   "name": "@open-dcp/filter",
-  "version": "0.1.7",
+  "version": "0.2.0",
   "description": "",
+  "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "tsc -p tsconfig.test.json && node --test .test-dist/tests/evaluate.test.js"
   },
   "keywords": [],
   "author": "Tobias Ladner",
-  "license": "ISC",
-  "dependencies": {
-    "tslib": "^2.8.1"
-  },
+  "license": "Apache-2.0",
   "devDependencies": {
+    "@types/node": "^18.19.0",
     "typescript": "^5.8.3"
   },
   "repository": {

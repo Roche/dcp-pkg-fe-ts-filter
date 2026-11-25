@@ -2,11 +2,13 @@
     "compilerOptions": {
         "outDir": "dist",
         "declaration": true,
-        "module": "esnext",
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
         "target": "es6",
         "lib": ["es2016", "DOM"],
         "strict": true,
-        "esModuleInterop": true
+        "esModuleInterop": true,
+        "types": []
     },
     "include": [
         "src"
